@@ -1,0 +1,12 @@
+{
+    "rulesDirectory": "../../../../lib",
+    "rules": {
+        "no-focused-tests": [
+            true,
+            {
+                "runner": "ava",
+                "suffix": ".tsx"
+            }
+        ]
+    }
+}

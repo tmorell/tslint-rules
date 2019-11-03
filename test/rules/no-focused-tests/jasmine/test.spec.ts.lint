@@ -1,0 +1,40 @@
+describe(() => { });
+
+fdescribe(() => { });
+~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+it(() => { });
+
+fit(() => { });
+~~~~~~~~~~~~~~ [focused]
+
+
+describe(() => {
+    it(() => { });
+});
+
+fdescribe(() => {
+~~~~~~~~~~~~~~~~~
+    it(() => { });
+~~~~~~~~~~~~~~~~~~~
+});
+~~ [focused]
+
+describe(() => {
+    fit(() => { });
+    ~~~~~~~~~~~~~~ [focused]
+});
+
+fdescribe(() => {
+~~~~~~~~~~~~~~~~~
+    fit(() => { });
+~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+
+
+[focused]: Do not commit focused tests.

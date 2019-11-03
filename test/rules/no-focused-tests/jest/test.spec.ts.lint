@@ -1,0 +1,103 @@
+describe("suite", () => { });
+
+fdescribe("suite", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [fdescribe]
+
+describe.only("suite", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+it("test", () => { });
+
+fit("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~ [fit]
+
+it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+describe("suite", () => {
+    it("test", () => { });
+});
+
+fdescribe("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+});
+~~  [fdescribe]
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it("test", () => { });
+~~~~~~~~~~~~~~~~~~~
+});
+~~ [focused]
+
+describe("suite", () => {
+    fit("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~ [fit]
+});
+
+describe("suite", () => {
+    it.only("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+
+fdescribe("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    fit("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~ [fit]
+});
+~~ [fdescribe]
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+
+
+describe.each([[1, 1, 2], [1, 2, 3]])(
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it(`returns ${expected}`, () => {
+            expect(a + b).toBe(expected);
+        });
+    },
+);
+
+describe.only.each([[1, 1, 2], [1, 2, 3]])(
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it(`returns ${expected}`, () => {
+            expect(a + b).toBe(expected);
+        });
+    },
+);
+
+describe.only.each([[1, 1, 2], [1, 2, 3]])(
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it.only(`returns ${expected}`, () => {
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            expect(a + b).toBe(expected);
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        });
+~~~~~~~~~~ [focused]
+    },
+);
+
+
+
+[focused]: Do not commit focused tests.
+[fdescribe]: Favor '.only' over 'fdescribe'.
+[fit]: Favor '.only' over 'fit'.

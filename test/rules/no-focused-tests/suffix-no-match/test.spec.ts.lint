@@ -1,0 +1,23 @@
+// There are warnings, but not to be reported as suffix excludes this file
+
+test("test", () => { });
+
+test.only("test", () => { });
+
+
+
+test("test", async () => { });
+
+test.only("test", async () => { });
+
+
+
+test.serial("test", () => { });
+
+test.serial.only("test", () => { });
+
+
+
+test.serial("test", async () => { });
+
+test.serial.only("test", async () => { });
