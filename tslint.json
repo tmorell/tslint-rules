@@ -60,16 +60,7 @@
         "trailing-comma": false,
         "triple-equals": true,
         "unified-signatures": true,
-        "variable-name": true,
-        "no-focused-tests": [
-            true,
-            {
-                "runner": "jasmine",
-                "suffix": "spec.ts"
-            }
-        ]
+        "variable-name": true
     },
-    "rulesDirectory": [
-        "lib"
-    ]
+    "rulesDirectory": []
 }
