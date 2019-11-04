@@ -5,6 +5,13 @@ fdescribe(() => { });
 
 
 
+describe(function() { });
+
+fdescribe(function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
 it(() => { });
 
 fit(() => { });

@@ -1,17 +1,27 @@
 describe("suite", () => { });
 
 fdescribe("suite", () => { });
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [fdescribe]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 describe.only("suite", () => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 
 
+describe("suite", function() { });
+
+fdescribe("suite", function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+describe.only("suite", function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
 it("test", () => { });
 
 fit("test", () => { });
-~~~~~~~~~~~~~~~~~~~~~~ [fit]
+~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 it.only("test", () => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
@@ -27,7 +37,7 @@ fdescribe("suite", () => {
     it("test", () => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 });
-~~  [fdescribe]
+~~  [focused]
 
 describe.only("suite", () => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +48,7 @@ describe.only("suite", () => {
 
 describe("suite", () => {
     fit("test", () => { });
-    ~~~~~~~~~~~~~~~~~~~~~~ [fit]
+    ~~~~~~~~~~~~~~~~~~~~~~ [focused]
 });
 
 describe("suite", () => {
@@ -50,9 +60,9 @@ fdescribe("suite", () => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
     fit("test", () => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~ [fit]
+    ~~~~~~~~~~~~~~~~~~~~~~ [focused]
 });
-~~ [fdescribe]
+~~ [focused]
 
 describe.only("suite", () => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,5 +109,3 @@ describe.only.each([[1, 1, 2], [1, 2, 3]])(
 
 
 [focused]: Do not commit focused tests.
-[fdescribe]: Favor '.only' over 'fdescribe'.
-[fit]: Favor '.only' over 'fit'.

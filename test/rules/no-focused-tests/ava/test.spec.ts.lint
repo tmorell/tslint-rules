@@ -1,7 +1,7 @@
-test("test", () => { });
+test("test", (t) => { });
 
-test.only("test", () => { });
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+test.only("test", (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 
 
@@ -12,24 +12,24 @@ test.only("test", function (t) { });
 
 
 
-test("test", async () => { });
+test("test", async (t) => { });
 
-test.only("test", async () => { });
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
-
-
-
-test.serial("test", () => { });
-
-test.serial.only("test", () => { });
+test.only("test", async (t) => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 
 
-test.serial("test", async () => { });
+test.serial("test", (t) => { });
 
-test.serial.only("test", async () => { });
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+test.serial.only("test", (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+test.serial("test", async (t) => { });
+
+test.serial.only("test", async (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 
 

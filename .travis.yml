@@ -1,0 +1,20 @@
+sudo: required
+language: node_js
+node_js:
+- "12"
+branches:
+  except:
+  - /^renovate\/.*$/
+cache:
+  directories:
+  - '$HOME/.npm'
+  - '$HOME/.sonar/cache'
+addons:
+  sonarcloud:
+    organization: "tmorell"
+install:
+- npm install
+script:
+- npm run tslint
+- npm run test:rules
+- sonar-scanner
