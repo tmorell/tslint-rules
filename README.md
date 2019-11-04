@@ -33,7 +33,7 @@ The following rules are available:
         <tr>
             <td style="vertical-align:top;min-width:130px">no-focused-tests</td>
             <td>
-                Do not commit code with focused tests. This is useful during development, but it might hide failing tests that do not get ran. Configuration:<br />
+                Do not commit code with focused tests. This is useful during development, but it might hide failing tests that do not get executed. Configuration:<br />
                 <b>runner</b>: Select one of the available options, ava, jasmine, jest, or mocha.<br />
                 <b>suffix</b>: Suffix for the test files; if not specified, all files will be analyzed.<br /><br />
                 Example:<br />
