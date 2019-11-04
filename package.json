@@ -36,7 +36,11 @@
     "keywords": [
         "tslint",
         "linter",
-        "testing"
+        "testing",
+        "ava",
+        "jasmine",
+        "jest",
+        "mocha"
     ],
     "license": "MIT",
     "main": "lib/index.js",
