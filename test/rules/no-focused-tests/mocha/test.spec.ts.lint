@@ -1,0 +1,69 @@
+describe("suite", () => { });
+
+describe.only("suite", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+describe("suite", function() { });
+
+describe.only("suite", function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+it("test", () => { });
+
+it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+describe("suite", () => {
+    it("test", () => { });
+});
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it("test", () => { });
+~~~~~~~~~~~~~~~~~~~
+});
+~~ [focused]
+
+describe("suite", () => {
+    it.only("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+
+
+context("suite", () => {
+    specify("test", () => { });
+});
+
+context.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    specify("test", () => { });
+~~~~~~~~~~~~~~~~~~
+});
+~~ [focused]
+
+context.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    specify.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+
+
+[focused]: Do not commit focused tests.

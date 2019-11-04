@@ -1,0 +1,49 @@
+test("test", (t) => { });
+
+test.only("test", (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+test("test", function (t) { });
+
+test.only("test", function (t) { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+test("test", async (t) => { });
+
+test.only("test", async (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+test.serial("test", (t) => { });
+
+test.serial.only("test", (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+test.serial("test", async (t) => { });
+
+test.serial.only("test", async (t) => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+["a", "b", "c"].forEach((value) => {
+    test(`a test ${value}`, (t) => {
+    });
+});
+
+["a", "b", "c"].forEach((value) => {
+    test.only(`a test ${value}`, (t) => {
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    });
+~~~~~~ [focused]
+});
+
+
+[focused]: Do not commit focused tests.

@@ -1,0 +1,11 @@
+{
+    "rulesDirectory": "../../../../lib",
+    "rules": {
+        "no-focused-tests": [
+            true,
+            {
+                "runner": "mocha"
+            }
+        ]
+    }
+}

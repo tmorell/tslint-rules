@@ -1,0 +1,111 @@
+describe("suite", () => { });
+
+fdescribe("suite", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+describe.only("suite", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+describe("suite", function() { });
+
+fdescribe("suite", function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+describe.only("suite", function() { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+it("test", () => { });
+
+fit("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+
+
+
+describe("suite", () => {
+    it("test", () => { });
+});
+
+fdescribe("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+});
+~~  [focused]
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it("test", () => { });
+~~~~~~~~~~~~~~~~~~~
+});
+~~ [focused]
+
+describe("suite", () => {
+    fit("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+
+describe("suite", () => {
+    it.only("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+
+fdescribe("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    fit("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    it.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
+
+
+
+describe.each([[1, 1, 2], [1, 2, 3]])(
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it(`returns ${expected}`, () => {
+            expect(a + b).toBe(expected);
+        });
+    },
+);
+
+describe.only.each([[1, 1, 2], [1, 2, 3]])(
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it(`returns ${expected}`, () => {
+            expect(a + b).toBe(expected);
+        });
+    },
+);
+
+describe.only.each([[1, 1, 2], [1, 2, 3]])(
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        it.only(`returns ${expected}`, () => {
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            expect(a + b).toBe(expected);
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        });
+~~~~~~~~~~ [focused]
+    },
+);
+
+
+
+[focused]: Do not commit focused tests.

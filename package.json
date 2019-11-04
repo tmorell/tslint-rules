@@ -1,0 +1,80 @@
+{
+    "author": "Teo Morell <teomorell@gmail.com>",
+    "ava": {
+        "compileEnhancements": false,
+        "extensions": [
+            "ts"
+        ],
+        "files": [
+            "!test/util.ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "tap": false,
+        "timeout": "10000",
+        "verbose": true
+    },
+    "bugs": {
+        "url": "https://github.com/tmorell/tslint-rules/issues"
+    },
+    "dependencies": {
+        "tsutils": "3.17.1"
+    },
+    "description": "Custom ts-lint rules.",
+    "devDependencies": {
+        "@types/node": "12.11.7",
+        "@types/sinon": "7.5.0",
+        "ava": "2.4.0",
+        "nyc": "14.1.1",
+        "sinon": "7.5.0",
+        "ts-node": "8.4.1",
+        "tsc-watch": "4.0.0",
+        "tslint": "5.20.0",
+        "typescript": "3.6.4"
+    },
+    "keywords": [
+        "tslint",
+        "linter",
+        "testing"
+    ],
+    "license": "MIT",
+    "main": "lib/index.js",
+    "name": "tslint-checks",
+    "nyc": {
+        "all": true,
+        "cache": false,
+        "exclude": [
+            "**/*.d.ts",
+            "**/*.spec.ts",
+            "coverage",
+            "baseline",
+            "test/util.ts"
+        ],
+        "extension": [
+            ".ts"
+        ]
+    },
+    "peerDependencies": {
+        "tslint": "^5.20.0",
+        "typescript": "^2.1.0 || ^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tmorell/tslint-rules.git"
+    },
+    "scripts": {
+        "build": "rm -rf ./lib ./.nyc_output ./coverage && tsc",
+        "copy:common": "cp -t ./dist README.md package.json LICENSE",
+        "coverage": "nyc report --reporter=html && xdg-open ./coverage/index.html",
+        "coverage:ci": "nyc report --reporter=lcov",
+        "debug:watch": "DEBUG=license-checker:* DEBUG_COLORS=true tsc-watch --onSuccess 'node lib/index.js'",
+        "nyc": "nyc ava",
+        "release": "npm run build && rm -rf ./dist && mkdir ./dist && cp -r ./lib/. ./dist && npm run copy:common",
+        "test": "npm run build && npm run nyc",
+        "test:watch": "ava --watch",
+        "tslint": "tslint -t stylish -c tslint.json -p tsconfig.spec.json",
+        "test:rules": "tslint --test test/rules/**/*"
+    },
+    "version": "0.0.3"
+}
