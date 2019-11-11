@@ -1,7 +1,7 @@
 ![Travis (.com)](https://img.shields.io/travis/com/tmorell/tslint-rules)
 ![David (path)](https://img.shields.io/david/tmorell/tslint-checks)
 ![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/tslint-checks)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tmorell_tslint-Checks&metric=alert_status)](https://sonarcloud.io/dashboard?id=tmorell_tslint-Checks)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tmorell_tslint-checks&metric=alert_status)](https://sonarcloud.io/dashboard?id=tmorell_tslint-checks))
 
 <div>
 
