@@ -54,7 +54,7 @@ The following rules are available:
                 "no-focused-tests": [
                     true,
                     {
-                        "runner": "ava"
+                        "runner": "ava",
                         "suffix": ".spec.ts"
                     }
                 ]
