@@ -30,7 +30,7 @@
         "sinon": "7.5.0",
         "ts-node": "8.4.1",
         "tsc-watch": "4.0.0",
-        "tslint": "5.20.0",
+        "tslint": "6.1.0",
         "typescript": "3.6.4"
     },
     "keywords": [
@@ -60,7 +60,7 @@
         ]
     },
     "peerDependencies": {
-        "tslint": "^5.20.0",
+        "tslint": "^5.20.0 || ^6.0.0",
         "typescript": "^2.1.0 || ^3.0.0"
     },
     "repository": {
