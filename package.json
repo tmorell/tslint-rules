@@ -23,7 +23,7 @@
     },
     "description": "Custom ts-lint rules.",
     "devDependencies": {
-        "@types/node": "12.11.7",
+        "@types/node": "12.12.30",
         "@types/sinon": "7.5.2",
         "ava": "2.4.0",
         "nyc": "15.0.0",
