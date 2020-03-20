@@ -80,5 +80,5 @@
         "tslint": "tslint -t stylish -c tslint.json -p tsconfig.spec.json",
         "test:rules": "tslint --test test/rules/**/*"
     },
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
