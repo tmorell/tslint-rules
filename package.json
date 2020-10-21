@@ -8,9 +8,9 @@
     },
     "description": "Custom ts-lint rules.",
     "devDependencies": {
-        "@types/node": "12.12.30",
-        "tslint": "6.1.0",
-        "typescript": "3.8.3"
+        "@types/node": "12.12.69",
+        "tslint": "6.1.3",
+        "typescript": "4.0.3"
     },
     "keywords": [
         "tslint",
