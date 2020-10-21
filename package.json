@@ -33,7 +33,7 @@
         "copy:common": "cp -t ./dist README.md package.json LICENSE",
         "lint": "tslint -t stylish -c tslint.json -p tsconfig.spec.json",
         "release": "npm run build && rm -rf ./dist && mkdir ./dist && cp -r ./lib/. ./dist && npm run copy:common",
-        "test": "tslint --test test/rules/**/*"
+        "test": "npm run build && tslint --test test/rules/**/*"
     },
     "version": "1.0.2"
 }

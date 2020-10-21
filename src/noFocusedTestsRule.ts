@@ -88,7 +88,7 @@ function validatorJest(node: ts.CallExpression): boolean {
     }
 
     // Check with .only accessor
-    return validatorOnly(node, ["describe.only", "it.only", "specify.only", "context.only"]);
+    return validatorOnly(node, ["describe.only", "it.only", "specify.only", "context.only", "test.only"]);
 }
 
 function validatorMocha(node: ts.CallExpression): boolean {
