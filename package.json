@@ -35,5 +35,5 @@
         "release": "npm run build && rm -rf ./dist && mkdir ./dist && cp -r ./lib/. ./dist && npm run copy:common",
         "test": "tslint --test test/rules/**/*"
     },
-    "version": "1.0.1"
+    "version": "1.0.2"
 }
