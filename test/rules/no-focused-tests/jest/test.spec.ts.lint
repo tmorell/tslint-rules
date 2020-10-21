@@ -26,6 +26,8 @@ fit("test", () => { });
 it.only("test", () => { });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
+test.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 
 
 describe("suite", () => {
@@ -56,6 +58,11 @@ describe("suite", () => {
     ~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
 });
 
+describe("suite", () => {
+    test.only("test", () => { });
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+
 fdescribe("suite", () => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
     fit("test", () => { });
@@ -72,6 +79,13 @@ describe.only("suite", () => {
 });
 ~~ [focused]
 
+describe.only("suite", () => {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    test.only("test", () => { });
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+});
+~~ [focused]
 
 
 describe.each([[1, 1, 2], [1, 2, 3]])(
@@ -106,6 +120,18 @@ describe.only.each([[1, 1, 2], [1, 2, 3]])(
     },
 );
 
+describe.only.each([[1, 1, 2], [1, 2, 3]])(
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [focused]
+    '.add(%i, %i)',
+    (a, b, expected) => {
+        test.only(`returns ${expected}`, () => {
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            expect(a + b).toBe(expected);
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        });
+~~~~~~~~~~ [focused]
+    },
+);
 
 
 [focused]: Do not commit focused tests.
