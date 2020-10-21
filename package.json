@@ -1,20 +1,5 @@
 {
     "author": "Teo Morell <teomorell@gmail.com>",
-    "ava": {
-        "compileEnhancements": false,
-        "extensions": [
-            "ts"
-        ],
-        "files": [
-            "!test/util.ts"
-        ],
-        "require": [
-            "ts-node/register"
-        ],
-        "tap": false,
-        "timeout": "10000",
-        "verbose": true
-    },
     "bugs": {
         "url": "https://github.com/tmorell/tslint-rules/issues"
     },
@@ -23,15 +8,9 @@
     },
     "description": "Custom ts-lint rules.",
     "devDependencies": {
-        "@types/node": "12.12.30",
-        "@types/sinon": "7.5.2",
-        "ava": "3.5.0",
-        "nyc": "15.0.0",
-        "sinon": "9.0.1",
-        "ts-node": "8.7.0",
-        "tsc-watch": "4.2.3",
-        "tslint": "6.1.0",
-        "typescript": "3.8.3"
+        "@types/node": "12.12.69",
+        "tslint": "6.1.3",
+        "typescript": "4.0.3"
     },
     "keywords": [
         "tslint",
@@ -45,40 +24,16 @@
     "license": "MIT",
     "main": "lib/index.js",
     "name": "tslint-checks",
-    "nyc": {
-        "all": true,
-        "cache": false,
-        "exclude": [
-            "**/*.d.ts",
-            "**/*.spec.ts",
-            "coverage",
-            "baseline",
-            "test/util.ts"
-        ],
-        "extension": [
-            ".ts"
-        ]
-    },
-    "peerDependencies": {
-        "tslint": "^5.20.0 || ^6.0.0",
-        "typescript": "^2.1.0 || ^3.0.0"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tmorell/tslint-rules.git"
     },
     "scripts": {
-        "build": "rm -rf ./lib ./.nyc_output ./coverage && tsc",
+        "build": "rm -rf ./lib && tsc",
         "copy:common": "cp -t ./dist README.md package.json LICENSE",
-        "coverage": "nyc report --reporter=html && xdg-open ./coverage/index.html",
-        "coverage:ci": "nyc report --reporter=lcov",
-        "debug:watch": "DEBUG=license-checker:* DEBUG_COLORS=true tsc-watch --onSuccess 'node lib/index.js'",
-        "nyc": "nyc ava",
+        "lint": "tslint -t stylish -c tslint.json -p tsconfig.spec.json",
         "release": "npm run build && rm -rf ./dist && mkdir ./dist && cp -r ./lib/. ./dist && npm run copy:common",
-        "test": "npm run build && npm run nyc",
-        "test:watch": "ava --watch",
-        "tslint": "tslint -t stylish -c tslint.json -p tsconfig.spec.json",
-        "test:rules": "tslint --test test/rules/**/*"
+        "test": "tslint --test test/rules/**/*"
     },
-    "version": "1.0.0"
+    "version": "1.0.2"
 }

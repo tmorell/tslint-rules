@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-- "12"
+- "14"
 branches:
   except:
   - /^renovate\/.*$/
@@ -15,7 +15,7 @@ addons:
 install:
 - npm install
 script:
-- npm run tslint
+- npm run lint
 - npm run build
-- npm run test:rules
+- npm run test
 - sonar-scanner
